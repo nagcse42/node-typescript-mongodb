@@ -1,0 +1,19 @@
+{
+  "name": "node-typescript-mongodb",
+  "version": "1.0.0",
+  "description": "Tech stack with node js, express, type script and mongodb",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nagcse42/node-typescript-mongodb.git"
+  },
+  "author": "Nagarjuna Paritala",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nagcse42/node-typescript-mongodb/issues"
+  },
+  "homepage": "https://github.com/nagcse42/node-typescript-mongodb#readme"
+}
