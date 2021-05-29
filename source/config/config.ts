@@ -26,10 +26,19 @@ const MONGO = {
 
 const SERVER_HOSTNAME = process.env.SERVER_HOSTNAME || 'localhost';
 const SERVER_PORT = process.env.SERVER_PORT || 4200;
+//Authorization properties
+const SERVER_TOKEN_EXPIRE_TIME = process.env.SERVER_TOKEN_EXPIRE_TIME || 3600;
+const SERVER_TOKEN_ISSUER = process.env.SERVER_TOKEN_ISSUER || 'nodeadmin';
+const SERVER_TOKEN_SECRET = process.env.SERVER_TOKEN_SECRET || 'nodeadminsecrethash';
 
 const server = {
     hostName: SERVER_HOSTNAME,
-    port: SERVER_PORT
+    port: SERVER_PORT,
+    token: {
+        expireTime: SERVER_TOKEN_EXPIRE_TIME,
+        issuer: SERVER_TOKEN_ISSUER,
+        secret: SERVER_TOKEN_SECRET
+    }
 };
 
 const config = {
