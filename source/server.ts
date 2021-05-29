@@ -2,15 +2,26 @@ import http from 'http';
 import express from 'express';
 import bodyParser from 'body-parser';
 import logging from './config/logging';
+import mongoose from 'mongoose';
 import config from './config/config';
 import healthCheck from './routes/sample';
+import books from './routes/sample';
+
 
 const NAME_SPACE = 'Server';
 const router = express();
 
-/**
- * Logging the request
- */
+/** Connect to Mongo DB*/
+mongoose.connect(config.mongo.url, config.mongo.options)
+    .then((result) => {
+        logging.info(NAME_SPACE, `Connected to Mongo DB :)`);
+    })
+    .catch((error) => {
+        logging.error(NAME_SPACE, error.message, error);
+    });
+
+
+/** Logging the request */
 router.use((req, res, next) => {
     logging.info(NAME_SPACE, `Method - [${req.method}], URL-[${req.url}], IP - [${req.socket.remoteAddress}]`);
 
@@ -38,7 +49,7 @@ router.use((req, res, next) => {
 
 /** Routes */
 router.use('/app', healthCheck);
-
+router.use('/books', books);
 
 /** Error Handling */
 router.use((req, res, next) => {

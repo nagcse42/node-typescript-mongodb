@@ -4,7 +4,7 @@
   "description": "Tech stack with node js, express, type script and mongodb",
   "main": "source/server.ts",
   "scripts": {
-    "build":"rm -rf build/ && --write source/ && tsc",
+    "build":"tsc --build",
     "compile": "tsc source/server.ts -w",
     "start": "nodemon source/server"
   },

@@ -3,6 +3,6 @@ import booksController from '../controller/books-controller';
 
 const router = express.Router();
 
-router.get('/get/books', booksController.getAllBooks);
+router.get('/getAll', booksController.getAllBooks);
 
 export = router;
