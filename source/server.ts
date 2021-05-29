@@ -5,13 +5,13 @@ import logging from './config/logging';
 import mongoose from 'mongoose';
 import config from './config/config';
 import healthCheck from './routes/sample';
-import books from './routes/sample';
-
+import books from './routes/books';
+import connectDB from './config/db-service'
 
 const NAME_SPACE = 'Server';
 const router = express();
 
-/** Connect to Mongo DB*/
+/** Connect to Mongo DB unsing mongoose*/
 mongoose.connect(config.mongo.url, config.mongo.options)
     .then((result) => {
         logging.info(NAME_SPACE, `Connected to Mongo DB :)`);
@@ -20,6 +20,8 @@ mongoose.connect(config.mongo.url, config.mongo.options)
         logging.error(NAME_SPACE, error.message, error);
     });
 
+/** Connecting Mongo DB using Mongo Client */
+//connectDB.connectDB();
 
 /** Logging the request */
 router.use((req, res, next) => {

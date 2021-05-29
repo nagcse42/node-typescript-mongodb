@@ -12,4 +12,8 @@ const BookSchema: Schema = new Schema(
     }
 );
 
+BookSchema.post<BookInterface>('save', function () {
+    this.extraInfo = `Telugu Movies Books #Telugu, #TeluguMovie #Tollywood`
+})
+
 export default mongoose.model<BookInterface>('Book', BookSchema);

@@ -4,7 +4,7 @@
   "description": "Tech stack with node js, express, type script and mongodb",
   "main": "source/server.ts",
   "scripts": {
-    "build":"tsc --build",
+    "build": "tsc --build",
     "compile": "tsc source/server.ts -w",
     "start": "nodemon source/server"
   },
@@ -21,6 +21,7 @@
   "dependencies": {
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
+    "mongodb": "^3.6.9",
     "mongoose": "^5.12.12",
     "prettier": "^2.3.0",
     "ts-node": "^10.0.0",

@@ -12,10 +12,10 @@ const MONGO_OPTIONS = {
     retryWrites: false
 };
 
-const MONGO_USERNAME = process.env.MONGO_USERNAME || 'superuser';
-const MONGO_PASSWORD = process.env.MONGO_PASSWORD || 'superuserpswd';
-const MONGO_HOST = process.env.MONGO_HOST_URL || 'cluster0.ydsso.mongodb.net/node_ts_mongo?retryWrites=true&w=majority';
-//mongodb+srv://superuser:<password>@cluster0.ydsso.mongodb.net/node_ts_mongo?retryWrites=true&w=majority
+const MONGO_USERNAME = process.env.MONGO_USERNAME || 'nodeadmin';
+const MONGO_PASSWORD = process.env.MONGO_PASSWORD || 'nodeadmin123';
+const MONGO_HOST = process.env.MONGO_HOST_URL || 'cluster0.kkvam.mongodb.net/myFirstDatabase?retryWrites=true&w=majority&ssl=true';
+
 const MONGO = {
     host: MONGO_HOST,
     username: MONGO_USERNAME,
