@@ -2,7 +2,7 @@ import http from 'http';
 import bodyParser from 'body-parser';
 import express from 'express';
 import mongoose from 'mongoose';
-import config from './config/config';
+import config from './source/config/config';
 
 const NAMESPACE = 'server';
 const router = express();
