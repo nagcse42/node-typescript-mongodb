@@ -2,11 +2,11 @@
   "name": "node-typescript-mongodb",
   "version": "1.0.0",
   "description": "Tech stack with node js, express, type script and mongodb",
-  "main": "app.ts",
+  "main": "source/server.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "compile": "tsc app.ts -w",
-    "start": "nodemon app"
+    "build":"rm -rf build/ && prettier --write source/ && tsc",
+    "compile": "tsc source/server.ts -w",
+    "start": "nodemon source/server"
   },
   "repository": {
     "type": "git",
