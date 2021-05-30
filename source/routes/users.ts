@@ -1,10 +1,10 @@
 import express from 'express';
 import userController from '../controller/user-controller';
-import router from './books';
+import extractJWT from '../middleware/extractJWT';
 
-const route = express.Router();
+const router = express.Router();
 
-router.get('validate', userController.validateToken);
+router.get('validate', extractJWT, userController.validateToken);
 router.post('register', userController.register);
 router.post('login', userController.login);
 router.get('getAllUsers', userController.getAllUsers);
